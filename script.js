@@ -98,16 +98,11 @@ function handleUpdate() {
     document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix)
     drawImage();
 
-    // console.log(ctx.filter = `${this.name}(${this.value+suffix})`)
 
 }
 
 inputs.forEach(input => input.addEventListener('change', handleUpdate));
 inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
-
-
-
-
 
 
 
@@ -156,11 +151,10 @@ function drawImage() {
     canvas.width = img.width;
     canvas.height = img.height;
     const ctx = canvas.getContext("2d");
-    // ctx.filter = 'blur(10px)';
+   
     
-    ctx.filter = `blur(${(i0.value)*1.8}px) invert(${(i1.value)*1.25}%) sepia(${(i2.value)*2.4}%) saturate(${(i3.value)*2.2}%) hue-rotate(${(i4.value)*0.5}deg)`;
-    // ctx.filter = `blur(${i0.value}px) invert(${1}) sepia(${0.5})`;
-    // console.log(`blur(${i0.value}px) invert(${i1.value}%) sepia(${i2.value}%) saturate(${i3.value}%) hue(${i4.value}deg)`)
+    ctx.filter = `blur(${(i0.value)*1.8}px) invert(${(i1.value)*1.25}%) sepia(${(i2.value)*2.4}%) saturate(${(i3.value)}%) hue-rotate(${(i4.value)*0.5}deg)`;
+    
     ctx.drawImage(img, 0, 0);
   };  
 }
